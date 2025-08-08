@@ -19,6 +19,9 @@ Notre objectif est de :
 
 ## Résumé des essais réalisés
 
+<img width="1138" height="352" alt="image" src="https://github.com/user-attachments/assets/9a218f2f-c3f8-4f34-ab32-56c44f181769" />
+
+
 ### Premier test : CNN simple
 
 - Modèle basique avec 2 couches convolutionnelles et 1 couche dense finale.  
