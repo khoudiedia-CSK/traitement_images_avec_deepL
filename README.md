@@ -15,3 +15,47 @@ Entraîner un modèle de classification (ou de vérification) de visages,
 Évaluer ses performances sur un ensemble de test non vu,
 
 Étudier les limites et axes d’amélioration d’un tel système.
+
+Résumé des essais réalisés
+Premier test : CNN simple
+
+Modèle basique avec 2 couches convolutionnelles, 1 couche dense finale.
+
+Images redimensionnées à 64x64 pixels.
+
+Résultat : environ 15 % de précision sur le test.
+
+Limites : modèle trop simple, peu d’images par classe, pas d’augmentation des données, taille d’image faible.
+
+Deuxième test : CNN amélioré + augmentation de données
+
+Ajout d’une couche convolutionnelle supplémentaire, dropout pour éviter le sur-apprentissage.
+
+Augmentation de données (rotation, zoom, translation, flip).
+
+Seules les personnes avec au moins 3 images ont été conservées.
+
+Résultat : environ 21 % de précision.
+
+Amélioration notable, mais encore insuffisant pour une bonne reconnaissance faciale.
+
+Troisième test : transfert learning avec MobileNetV2 pré-entraîné
+
+Images redimensionnées à 160x160 pixels pour correspondre à l’entrée du modèle MobileNetV2.
+
+Filtrage plus strict : minimum 15 images par personne pour un meilleur apprentissage.
+
+Couche de base gelée, ajout d’un classifieur personnalisé avec dropout.
+
+Résultat : environ 54 % de précision.
+
+Conclusion : le transfert learning apporte un vrai gain en performance grâce à l’utilisation de représentations visuelles déjà apprises sur un large corpus d’images.
+
+Points clés à retenir
+Qualité des données : avoir suffisamment d’exemples par personne est crucial.
+
+Augmentation des données : nécessaire pour améliorer la robustesse du modèle.
+
+Taille d’image : plus grande, plus d’informations et meilleures performances.
+
+Transfert learning : méthode efficace pour exploiter des modèles pré-entraînés sur de larges bases et les adapter à des tâches spécifiques.
