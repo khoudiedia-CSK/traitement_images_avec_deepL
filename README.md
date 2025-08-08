@@ -1,4 +1,4 @@
-# Traitement_images_avec_deepL
+# Traitement_images_avec_deep_Learnig(CNN)
 📝 Contexte du projet 
 La reconnaissance faciale est aujourd’hui au cœur de nombreuses applications modernes : sécurité, biométrie, réseaux sociaux, santé, ou encore commerce. Toutefois, reconnaître un visage en conditions réelles reste un défi de taille, en raison des variations d’éclairage, de pose, d'expression, d'âge ou encore de qualité d’image.
 
