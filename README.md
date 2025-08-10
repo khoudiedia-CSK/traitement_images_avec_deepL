@@ -28,6 +28,8 @@ Notre objectif est de :
 - Images redimensionnées à 64x64 pixels.  
 - Résultat : **~15 % de précision** sur le test.  
 - Limites : modèle trop simple, peu d’images par classe, pas d’augmentation des données, taille d’image faible.
+- 
+<img width="1267" height="577" alt="image" src="https://github.com/user-attachments/assets/1e5b1ffa-45b1-4860-a30f-6aefabdfc95d" />
 
 ---
 
