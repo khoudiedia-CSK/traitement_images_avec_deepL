@@ -48,10 +48,46 @@ Notre objectif est de :
 - Images redimensionnées à 160x160 pixels (taille attendue par MobileNetV2).  
 - Filtrage strict : minimum 15 images par personne pour un meilleur apprentissage.  
 - Couches de MobileNetV2 gelées, ajout d’un classifieur personnalisé avec dropout.  
-- Résultat : **~54 % de précision**.  
+- Résultat : **~54 % de précision**.
+
+  <img width="1253" height="570" alt="image" src="https://github.com/user-attachments/assets/2f523081-b09e-4a65-9bf2-1749157fb1b0" />
+
 - Conclusion : le transfert learning apporte un vrai gain de performance grâce à l’utilisation de représentations visuelles pré-apprises.
 
 ---
+Note sur les résultats :
+Ce quatrieme entraînement était un test visant à analyser la stabilité du modèle. Les résultats montrent une précision faible (< 17%) et des oscillations importantes dans la perte de validation, indiquant un apprentissage instable.
+Des améliorations prévues incluent la réduction du learning rate, l’utilisation d’optimiseurs adaptés (AdamW), la mise en place de data augmentation, et l’optimisation de l’architecture pour mieux s’adapter aux données.
+<img width="1257" height="575" alt="image" src="https://github.com/user-attachments/assets/353a4c6f-4f3f-421f-8d99-bd3b7123f40f" />
+
+📝 Interprétation des résultats
+1. Accuracy (Précision)
+Observation :
+
+La précision d’entraînement et de validation reste très basse (< 0.17).
+
+La validation chute fortement entre les époques 2 et 5 avant de remonter.
+
+Interprétation :
+
+Le modèle n’arrive pas à apprendre des représentations utiles.
+
+Les variations brusques de la précision de validation indiquent probablement un petit dataset ou un apprentissage instable.
+
+2. Loss (Perte)
+Observation :
+
+La perte d’entraînement diminue globalement, ce qui signifie que le modèle s’adapte au jeu d’entraînement.
+
+La perte de validation est instable : baisse → remontée → baisse à nouveau.
+
+Interprétation :
+
+Les oscillations peuvent indiquer un learning rate trop élevé ou un bruit dans les données.
+
+Le fait que la perte baisse sur les deux ensembles à la fin suggère que l’entraînement n’est pas encore convergé.
+
+
 
 ## Points clés à retenir
 
